@@ -1,10 +1,8 @@
 package com.mcarabajal.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @Entity(name = "productos")
 public class Producto {
 
@@ -20,12 +17,16 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Autoincremental
     private long id;
 
+    @Column(nullable = false)
     private String titulo;
 
+    @Column(nullable = false)
     private String descripcion;
 
+    @Column(nullable = false)
     private float precio;
 
+    @Column(nullable = false)
     private int stock;
 
     @ManyToMany(fetch = FetchType.EAGER)

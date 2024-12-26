@@ -7,6 +7,8 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductoApi {
 
+    // private static final Logger log = LoggerFactory.getLogger(ProductoApi.class);
     @Inject
     ProductoRepository productoRepository;
 
