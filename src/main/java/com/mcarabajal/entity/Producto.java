@@ -1,7 +1,6 @@
 package com.mcarabajal.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -22,6 +21,13 @@ public class Producto {
 
     @Column(nullable = false)
     private String descripcion;
+
+    @Column(
+            name = "codigo_producto",
+            nullable = false,
+            unique = true
+    )
+    private String codigoProducto;
 
     @Column(nullable = false)
     private float precio;
